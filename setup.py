@@ -9,11 +9,12 @@ setup(
     description="A simple way to print colored text in the terminal.",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    keywords=["print", "output", "input"],
     author="2Bor3d",
     packages=["out"],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: GNU General Public License v3 (GPLv3)",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
     license="GPLv3",
