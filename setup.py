@@ -1,10 +1,10 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as read:
     long_description = read.read()
 
 setup(
-    name="simple-out",
+    name="simple_out",
     version="0.1",
     description="A simple way to print colored text in the terminal.",
     long_description=long_description,
