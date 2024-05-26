@@ -1,6 +1,6 @@
 import json
 import os
-
+from Color import Color
 
 def get_dict(path: str="dict.json", package_dir: bool=True):
     if package_dir:
@@ -13,7 +13,7 @@ def get_color(name: str, dictionary: dict=None, path: str="dict.json", package_d
     if dictionary != None:
         colors = dictionary
     else:
-        colors = get_dict(path=path, package_dir=package_dir, no_exeption=no_exeption)
+        colors = get_dict(path=path, package_dir=package_dir)
 
     if name in colors:
         for i in colors:
@@ -25,9 +25,11 @@ def get_color(name: str, dictionary: dict=None, path: str="dict.json", package_d
         return 38
 
 
-def out(text, color: int|str=38, *args, dictionary: dict=None, path: str="dict.json", package_dir: bool=True, no_exeption: bool=False, output=True) -> str:
+def out(text, color: Color|int|str=38, *args, dictionary: dict=None, path: str="dict.json", package_dir: bool=True, no_exeption: bool=False, output=True) -> str:
     if type(color) == str:
         color = get_color(color, dictionary=dictionary, path=path, package_dir=package_dir, no_exeption=no_exeption)
+    elif type(color) == Color:
+        color = color.value
     combine = f"\033[{color}m{text}"
     for i in range(int(len(args)/2)):
         if type(args[i*2+1]) == str:
@@ -38,7 +40,6 @@ def out(text, color: int|str=38, *args, dictionary: dict=None, path: str="dict.j
     if output:
         print(combine)
     return combine
-
 
 def inp(text, color: int|str=38, *args, dictionary: dict=None, path: str="dict.json", package_dir: bool=True, no_exeption: bool=False) -> str:
     return input(out(text, color, *args, dictionary=dictionary, path=path, package_dir=package_dir, no_exeption=no_exeption, output=False))
