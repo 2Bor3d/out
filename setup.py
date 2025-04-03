@@ -19,5 +19,5 @@ setup(
     ],
     license="GPLv3",
     url="https://github.com/2Bor3d/out",
-    ext_modules=[Extension("out", ["out/out.c"])]
+    ext_modules=[Extension("out", sources=["out/out.c"])]
 )
