@@ -72,3 +72,20 @@ def options(reach: int=None, dictionary: dict=None, path: str="dict.json", packa
     elif dictionary == None:
         for color in dictionary:
             out(f"{color}: {dictionary[color]}", dictionary[color])
+
+
+class Out:
+    def __init__(self, path="out.config") -> object:
+        try:
+            # try to open user config
+            with open(path) as file:
+                self.config: dict = json.load(file);
+        except FileNotFoundError:
+            try:
+                # try to open default config
+                with open(f"{os.path.dirname(os.path.abspath(__file__))}/{path}") as file:
+                    self.config: dict = json.load(file);
+            except FileNotFoundError:
+                print("error wip...")
+
+Out()
