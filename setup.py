@@ -5,7 +5,7 @@ with open("README.md", "r") as read:
 
 setup(
     name="simple_out",
-    version="0.3",
+    version="0.3.1",
     description="A simple way to print colored text in the terminal.",
     long_description=long_description,
     long_description_content_type="text/markdown",
