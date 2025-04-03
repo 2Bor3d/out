@@ -4,8 +4,8 @@ with open("README.md", "r") as read:
     long_description = read.read()
 
 setup(
-    name="simple_out",
-    version="0.0",
+    name="simple_out_c",
+    version="1.0",
     description="A simple way to print colored text in the terminal.",
     long_description=long_description,
     long_description_content_type="text/markdown",
